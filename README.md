@@ -173,7 +173,7 @@ If you have only one GPU, disable `DataParallel` in `FL_ResNet_HAM10000.py`:
 | **Error** | **Cause** | **Fix** |
 |-----------|----------|---------|
 | `No module named 'sklearn'` | `scikit-learn` is missing | `pip install scikit-learn` |
-| `Output size is too small` | Pooling layer reducing dimensions to (0x0) | 1. Change `self.avgpool = nn.AdaptiveAvgPool2d((1, 1))` 2.gdas|
+| `Output size is too small` | Pooling layer reducing dimensions to (0x0) | 1. Change `self.avgpool = nn.AdaptiveAvgPool2d((1, 1))`|
 | `size mismatch, m1: [64 x 2048], m2: [512 x 7]` | Incorrect FC layer input | Change `self.fc = nn.Linear(2048, num_classes)` |
 | `Caught RuntimeError in replica 0 on device 0` | Multi-GPU issue | Disable `nn.DataParallel` |
 
